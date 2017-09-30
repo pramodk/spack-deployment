@@ -102,5 +102,4 @@ spack module refresh --yes-to-all --delete-tree --module-type tcl --yes-to-all
 spack module refresh --yes-to-all --delete-tree --module-type lmod --yes-to-all
 
 ################################ PERMISSIONS ################################
-setfacl -R -m u:kumbhar-adm:rwx $COMPILERS_HOME/extra/mirror
-setfacl -R -m u:kumbhar:rwx $COMPILERS_HOME/extra/mirror
+setfacl -R -m u:kumbhar-adm:rwx $WORKSPACE
