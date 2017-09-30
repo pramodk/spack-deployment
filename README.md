@@ -1,4 +1,4 @@
-# Deploying Spack stack on BBP RH 6.9 #
+# Deploying Spack stack on BBP RH 6.9 Cluster #
 
 These are brief instructions to deploy entire software stack using Jenkins infrastructure with RH 6.9 node.
 

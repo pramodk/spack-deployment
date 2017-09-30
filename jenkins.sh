@@ -1,6 +1,5 @@
 #!/bin/bash
 
-# enable debug verbose
 set -x
 set -e
 
@@ -63,7 +62,7 @@ done
 
 ############################## PGI COMPILER TARBALL #############################
 mkdir -p  $COMPILERS_HOME/extra/mirror/pgi
-cp /gpfs/bbp.cscs.ch/scratch/gss/bgq/kumbhar-adm/pgilinux-2017-174-x86_64.tar.gz $COMPILERS_HOME/extra/mirror/pgi/pgi-17.4.tar.gz
+cp /gpfs/bbp.cscs.ch/scratch/gss/bgq/kumbhar-adm/compiler_downlaods/pgilinux-2017-174-x86_64.tar.gz $COMPILERS_HOME/extra/mirror/pgi/pgi-17.4.tar.gz
 
 
 ################################ SET COMPILERS CONFIG ################################
@@ -95,5 +94,10 @@ spack compiler find `spack location --install-dir gcc@4.9.3`
 spack install llvm@4.0.1 %gcc@4.9.3
 
 
+####################### REGENERATE MODULES ################################
+spack module refresh --yes-to-all --delete-tree --module-type tcl --yes-to-all
+spack module refresh --yes-to-all --delete-tree --module-type lmod --yes-to-all
+
 ################################ PERMISSIONS ################################
 setfacl -R -m u:kumbhar-adm:rwx $COMPILERS_HOME/extra/mirror
+setfacl -R -m u:kumbhar:rwx $COMPILERS_HOME/extra/mirror
