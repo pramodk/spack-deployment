@@ -1,0 +1,129 @@
+packages:
+    cmake:
+        paths:
+            cmake@2.8.12: /usr
+        version: [2.8.12]
+    flex:
+        paths:
+            flex@2.5.35: /usr
+        version: [2.5.35]
+    bison:
+        paths:
+            bison@2.4.1: /usr
+        version: [2.4.1]
+    autoconf:
+        paths:
+            autoconf@2.63: /usr
+        version: [2.63]
+    automake:
+        paths:
+            automake@1.11.1: /usr
+        version: [1.11.1]
+    m4:
+        paths:
+            m4@1.4.13: /usr
+        version: [1.4.13]
+    environment-modules:
+        paths:
+            environment-modules@3.2.10: /usr
+        version: [3.2.10]
+    pkg-config:
+        paths:
+            pkg-config@0.23.9: /usr
+        version: [0.23.9]
+    libtool:
+        paths:
+            libtool@2.2.6: /usr
+        version: [2.2.6]
+    ncurses:
+        paths:
+            ncurses@5.7.4: /usr
+        version: [5.7.4]
+    # lua is not complete installation as it lacks luarocks
+    lua:
+        paths:
+            lua@5.1.4: /usr
+        version: [5.1.4]
+    xz:
+        paths:
+            xz@4.9: /usr
+        version: [xz]
+    readline:
+        paths:
+            readline@6.0.4: /usr
+        version: [6.0.4]
+    sqlite:
+        paths:
+            sqlite@3.6.20: /usr
+        version: [3.6.20]
+    hwloc:
+        paths:
+            hwloc@1.5.3: /usr
+        version: [1.5.3]
+    libedit:
+        paths:
+            libedit@2.11.4: /usr
+        version: [2.11.4]
+    openssl:
+        paths:
+            openssl@1.0: /usr
+        version: [1.0]
+    fontconfig:
+        paths:
+            fontconfig@2.8.0: /usr
+        version: [2.8.0]
+    glib:
+        paths:
+            glib@1.2.10: /usr
+        version: [1.2.10]
+    libx11:
+        paths:
+            libx11@1.6.4: /usr
+        version: [1.6.4]
+    libjpeg:
+        paths:
+            libjpeg@1.2.1: /usr
+        version: [1.2.1]
+    libmng:
+        paths:
+            libmng@1.0.10: /usr
+        version: [1.0.10]
+    cairo:
+        paths:
+            cairo@1.8.8: /usr
+        version: [1.8.8]
+    tk:
+        paths:
+            tk@8.5.7: /usr
+        version: [8.5.7]
+    pango:
+        paths:
+            pango@1.28.1: /usr
+        version: [1.28.1]
+    tcl:
+        paths:
+            tcl@8.5.7: /usr
+        version: [8.5.7]
+    curl:
+        paths:
+            curl@7.19.7: /usr
+        version: [7.19.7]
+    tar:
+        paths:
+            tar@1.23: /usr
+        version: [1.23]
+    pcre:
+        paths:
+            pcre@7.8.7: /usr
+        version: [7.8.7]
+    perl:
+        paths:
+            perl@5.10.1: /usr
+        version: [5.10.1]
+    slurm:
+        paths:
+            slurm@16.05: /usr
+        buildable: False
+        version: [16.05]
+    all:
+        compiler: [gcc@4.9.3]

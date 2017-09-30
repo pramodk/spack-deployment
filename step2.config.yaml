@@ -1,0 +1,10 @@
+config:
+  install_tree: /gpfs/bbp.cscs.ch/scratch/gss/bgq/kumbhar-adm/SPACK_HOME/install_home/bbpviz/install
+  source_cache: /gpfs/bbp.cscs.ch/scratch/gss/bgq/kumbhar-adm/SPACK_HOME/var/spack/cache
+  module_roots:
+    tcl: /gpfs/bbp.cscs.ch/scratch/gss/bgq/kumbhar-adm/SPACK_HOME/install_home/bbpviz/tcl
+    lmod: /gpfs/bbp.cscs.ch/scratch/gss/bgq/kumbhar-adm/SPACK_HOME/install_home/bbpviz/lmod
+  build_stage:
+    - $tempdir
+    - /gpfs/bbp.cscs.ch/scratch/gss/bgq/kumbhar-adm/SPACK_HOME/var/spack/stage
+  install_path_scheme: '${ARCHITECTURE}/${COMPILERNAME}-${COMPILERVER}/${PACKAGE}-${VERSION}-${HASH:8}'
