@@ -3,11 +3,8 @@
 set -x
 set -e
 
-export WORKSPACE=/gpfs/bbp.cscs.ch/scratch/gss/bgq/kumbhar-adm/LOCAL_DEPLOYMENT
-mkdir -p $WORKSPACE
-
 ################################ SETUP BUILD ENVIRONMENT ################################
-cd $WORKSPACE
+export WORKSPACE=/gpfs/bbp.cscs.ch/scratch/gss/bgq/kumbhar-adm/JENKINS_DEPLOYMENT/
 mkdir -p $WORKSPACE/SPACK_HOME
 
 
