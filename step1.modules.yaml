@@ -28,7 +28,7 @@ modules:
     whitelist:
       - 'gcc'
       - 'pgi'
-      - 'intel'
+      - 'intel-parallel-studio'
       - 'llvm'
     blacklist:
       - '%gcc'
@@ -44,7 +44,7 @@ modules:
     whitelist:
       - 'gcc'
       - 'pgi'
-      - 'intel'
+      - 'intel-parallel-studio'
       - 'llvm'
     blacklist:
       - '%gcc'
