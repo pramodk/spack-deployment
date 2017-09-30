@@ -70,6 +70,7 @@ cp /gpfs/bbp.cscs.ch/scratch/gss/bgq/kumbhar-adm/compiler_downlaods/pgilinux-201
 mkdir -p  $SPACK_HOME/spack/etc/spack/defaults/linux/
 cp $SPACK_HOME/spack-deployment/step1.config.yaml $SPACK_HOME/spack/etc/spack/defaults/linux/config.yaml
 cp $SPACK_HOME/spack-deployment/step1.modules.yaml $SPACK_HOME/spack/etc/spack/defaults/linux/modules.yaml
+source $SPACK_HOME/spack/share/spack/setup-env.sh
 
 
 ################################ FOR C++11 INSTALL 4.8 GCC ################################
