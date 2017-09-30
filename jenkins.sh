@@ -62,8 +62,8 @@ done
 
 
 ############################## PGI COMPILER TARBALL #############################
-mkdir -p  $COMPILERS_HOME/extra/mirror/pgi
-cp /gpfs/bbp.cscs.ch/scratch/gss/bgq/kumbhar-adm/compiler_downlaods/pgilinux-2017-174-x86_64.tar.gz $COMPILERS_HOME/extra/mirror/pgi/pgi-17.4.tar.gz
+mkdir -p  $SPACK_HOME/mirrors/compiler/pgi
+cp /gpfs/bbp.cscs.ch/scratch/gss/bgq/kumbhar-adm/compiler_downlaods/pgilinux-2017-174-x86_64.tar.gz $SPACK_HOME/mirrors/compiler/pgi/pgi-17.4.tar.gz
 
 
 ################################ SET COMPILERS CONFIG ################################
