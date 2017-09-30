@@ -23,7 +23,7 @@ cd $SPACK_HOME
 git clone https://github.com/pramodskumbhar/spack.git -b bbprh69
 git clone https://github.com/pramodskumbhar/spack-deployment.git
 
-
+unset MODULEPATH
 export PATH=$SPACK_HOME/spack/bin:$PATH
 source $SPACK_HOME/spack/share/spack/setup-env.sh
 
@@ -101,5 +101,11 @@ done
 spack module refresh --yes-to-all --delete-tree --module-type tcl --yes-to-all
 spack module refresh --yes-to-all --delete-tree --module-type lmod --yes-to-all
 
+
+####################### AVAILABLE PACKAGES & MODULES ################################
+module avail
+spack find
+
 ################################ PERMISSIONS ################################
-setfacl -R -m u:kumbhar-adm:rwx $WORKSPACE
+chmod -R g-w  $WORKSPACE/*
+chmod -R g+rx $WORKSPACE/*
