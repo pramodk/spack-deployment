@@ -94,6 +94,20 @@ GCC_DIR=`spack location --install-dir gcc@4.9.3`
 makelocalrc -x $PGI_DIR -gcc $GCC_DIR/bin/gcc -gpp $GCC_DIR/bin/g++ -g77 $GCC_DIR/bin/gfortran
 
 
+####################### ADD NEW COMPILERS TO SPACK ################################
+spack compilers
+module load gcc-4.8.4 gcc-4.9.3 gcc-5.3.0 gcc-6.2.0 gcc-7.2.0 intel-parallel-studio-professional.2017.4 llvm-4.0.1 pgi-17.4
+spack compiler find
+
+sed -i 's#.*fc: .*pgfortran#      fc: /usr/bin/gfortran#' $HOME/.spack/linux/compilers.yaml
+sed -i 's#.*f77: .*pgf77#      f77: /usr/bin/gfortran#' $HOME/.spack/linux/compilers.yaml
+sed  -i 's#.*f77: null#      f77: /usr/bin/gfortran#' $HOME/.spack/linux/compilers.yaml
+sed  -i 's#.*fc: null#      fc: /usr/bin/gfortran#' $HOME/.spack/linux/compilers.yaml
+
+spack compilers
+spack config get compilers
+
+
 ################################ PERMISSIONS ################################
 chmod -R g-w  $SPACK_HOME/*
 chmod -R g+rx $COMPILERS_HOME/*
