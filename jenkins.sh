@@ -53,7 +53,6 @@ packages_to_mirror=(
     'gcc@7.2.0'
     'llvm@4.0.1'
     'intel-parallel-studio@professional.2017.4+advisor+inspector+itac+vtune'
-    'intel-parallel-studio@professional.2016.3+advisor+inspector+itac+vtune'
 )
 
 for package in "${packages_to_mirror[@]}"
@@ -87,7 +86,6 @@ spack compiler find `spack location --install-dir $core_compiler`
 ################################ START COMPILERS INSTALLATION ################################
 compilers=(
     'intel-parallel-studio@professional.2017.4+advisor+inspector+itac+vtune'
-    'intel-parallel-studio@professional.2016.3+advisor+inspector+itac+vtune'
     'gcc@4.9.3'
     'gcc@5.3.0'
     'gcc@6.2.0'
