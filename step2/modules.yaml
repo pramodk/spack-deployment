@@ -32,5 +32,5 @@ modules:
     all:
       filter:
         environment_blacklist: ['CPATH', 'LIBRARY_PATH']
-    naming_scheme: '${PACKAGE}-${VERSION}'
+    naming_scheme: '${PACKAGE}/${VERSION}-${COMPILERNAME}'
     hash_length: 6

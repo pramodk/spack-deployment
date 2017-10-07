@@ -5,12 +5,11 @@ set -e
 
 ########################################### PARSE ARGUMENTS ################################################
 if [ $# -ne 1 ]; then
-    echo $0: USAGE: register_packages.sh COMPILERS_INSTALL_PATH
+    echo $0: USAGE: $0 COMPILERS_INSTALL_PREFIX
     exit 1
 fi
 
-compilers_install_path="$1"
-
+compilers_install_prefix=$1
 
 declare -a packages=(
     'autoconf'
@@ -32,7 +31,6 @@ declare -a packages=(
     'lua'
     'm4'
     'ncurses'
-    'openssl'
     'pango'
     'pcre'
     'perl'
@@ -57,11 +55,15 @@ compilers=(
 )
 
 
+cp step2/config.yaml $SPACK_HOME/spack/etc/spack/defaults/linux/
+cp step2/modules.yaml $SPACK_HOME/spack/etc/spack/defaults/linux/
+cp step2/packages.yaml $SPACK_HOME/spack/etc/spack/defaults/linux/
+
 # for each compiler
 for compiler in "${compilers[@]}"
 do
-    cp step2/packages.yaml $HOME/.spack/linux/packages.yaml
-    sed -i "s/\[gcc@4.9.3]/\[$compiler]/g" $HOME/.spack/linux/packages.yaml
+    cp step2/packages.yaml $SPACK_HOME/spack/etc/spack/defaults/linux/packages.yaml
+    sed -i "s/\[gcc@4.9.3]/\[$compiler]/g" $SPACK_HOME/spack/etc/spack/defaults/linux/packages.yaml
 
     for package in "${packages[@]}"
     do
@@ -81,12 +83,12 @@ compilers=(
 )
 
 
-cp step2/packages.yaml $HOME/.spack/linux/packages.yaml
-sed -i "s#COMPILERS_INSTALL_PATH#$compilers_install_path#g" $HOME/.spack/linux/packages.yaml
-
+cp step2/packages.yaml $SPACK_HOME/spack/etc/spack/defaults/linux/packages.yaml
+sed -i "s#COMPILERS_INSTALL_PREFIX#$compilers_install_prefix#g" $SPACK_HOME/spack/etc/spack/defaults/linux/packages.yaml
 
 for compiler in "${compilers[@]}"
 do
-    echo "spack install $compiler %$core_compiler"
     spack install $compiler %$core_compiler
 done
+
+spack find -p
