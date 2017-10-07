@@ -57,5 +57,5 @@ set +x
 spack config get config
 echo "SOFTWARES_HOME : $SOFTWARES_HOME"
 
-cp /gpfs/bbp.cscs.ch/home/kumbhar-adm/spack-deployment/install.sh .
+cp /gpfs/bbp.cscs.ch/scratch/gss/bgq/kumbhar-adm/install.sh .
 bash install.sh
