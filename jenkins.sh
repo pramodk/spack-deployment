@@ -20,7 +20,7 @@ rm -rf $SPACK_HOME/spack $SPACK_HOME/spack-deployment $SPACK_HOME/licenses $HOME
 
 ########################## CLONE REPOSITORIES ############################
 cd $SPACK_HOME
-git clone https://github.com/pramodskumbhar/spack.git -b bbprh69
+git clone https://github.com/pramodskumbhar/spack.git -b stable
 git clone https://github.com/pramodskumbhar/spack-deployment.git
 
 unset MODULEPATH
@@ -52,7 +52,8 @@ packages_to_mirror=(
     'gcc@6.2.0'
     'gcc@7.2.0'
     'llvm@4.0.1'
-    'intel-parallel-studio@professional.2017.4'
+    'intel-parallel-studio@professional.2017.4+advisor+inspector+itac+vtune'
+    'intel-parallel-studio@professional.2016.3+advisor+inspector+itac+vtune'
 )
 
 for package in "${packages_to_mirror[@]}"
@@ -73,28 +74,32 @@ cp $SPACK_HOME/spack-deployment/step1.modules.yaml $SPACK_HOME/spack/etc/spack/d
 source $SPACK_HOME/spack/share/spack/setup-env.sh
 
 
-################################ FOR C++11 INSTALL 4.8 GCC ################################
-spack install gcc@4.8.4 %gcc@4
-spack compiler find `spack location --install-dir gcc@4.8.4`
+################################ INSTALL OPTIONS ################################
+options='--show-log-on-error'
+
+
+################################ CORE COMPILER (C++11 Headers) ################################
+core_compiler='gcc@4.8.4'
+spack install $options $core_compiler %gcc@4
+spack compiler find `spack location --install-dir $core_compiler`
 
 
 ################################ START COMPILERS INSTALLATION ################################
 compilers=(
-    'intel-parallel-studio@professional.2017.4'
+    'intel-parallel-studio@professional.2017.4+advisor+inspector+itac+vtune'
+    'intel-parallel-studio@professional.2016.3+advisor+inspector+itac+vtune'
     'gcc@4.9.3'
     'gcc@5.3.0'
     'gcc@6.2.0'
     'gcc@7.2.0'
-    'pgi+network+nvidia'
+    'pgi@17.4+network+nvidia'
     'llvm@4.0.1'
 )
 
-core_compiler='gcc@4.8.4'
-
 for compiler in "${compilers[@]}"
 do
-    spack spec $compiler %$core_compiler
-    spack install $compiler %$core_compiler
+    spack spec -I $compiler %$core_compiler
+    spack install $options $compiler %$core_compiler
 done
 
 

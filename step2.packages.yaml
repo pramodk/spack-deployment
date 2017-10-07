@@ -55,6 +55,10 @@ packages:
         paths:
             libmng@1.0.10: /usr
         version: [1.0.10]
+    libpciaccess:
+        paths:
+            libpciaccess@0.13.4: /usr
+        version: [0.13.4]
     libtool:
         paths:
             libtool@2.2.6: /usr
@@ -126,5 +130,25 @@ packages:
         paths:
             xz@4.9: /usr
         version: [xz]
+    gcc:
+        paths:
+            gcc@4.9.3%gcc@4.8.4: COMPILERS_INSTALL_PATH/gcc-4.9.3
+            gcc@5.3.0%gcc@4.8.4: COMPILERS_INSTALL_PATH/gcc-5.3.0
+            gcc@6.2.0%gcc@4.8.4: COMPILERS_INSTALL_PATH/gcc-6.2.0
+            gcc@7.2.0%gcc@4.8.4: COMPILERS_INSTALL_PATH/gcc-7.2.0
+        version: [4.9.3, 5.3.0, 6.2.0, 7.2.0]
+    llvm:
+        paths:
+            llvm@4.0.1%gcc@4.8.4: COMPILERS_INSTALL_PATH/llvm-4.0.1
+        version: [4.0.1]
+    intel-parallel-studio:
+        paths:
+            intel-parallel-studio@professional.2017.4%gcc@4.8.4: COMPILERS_INSTALL_PATH/intel-parallel-studio-professional.2017.4
+            intel-parallel-studio@professional.2016.3%gcc@4.8.4: COMPILERS_INSTALL_PATH/intel-parallel-studio-professional.2017.4
+        version: [professional.2017.4, professional.2016.3]
+    pgi:
+        paths:
+            pgi@17.4%gcc@4.8.4: COMPILERS_INSTALL_PATH/pgi-17.4
+        version: [17.4]
     all:
         compiler: [gcc@4.9.3]

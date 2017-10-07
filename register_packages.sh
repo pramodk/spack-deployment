@@ -42,9 +42,8 @@ compilers=(
     'gcc@4.9.3'
     'gcc@4.4.7'
     'clang@4.0.1'
-    'intel@17.0.0'
-    'intel@17.0.4'
     'intel@16.0.3'
+    'intel@17.0.4'
     'pgi@17.4'
 )
 
@@ -62,3 +61,5 @@ do
         spack install $package %$compiler
     done
 done
+
+core_compiler='gcc@4.8.4'
