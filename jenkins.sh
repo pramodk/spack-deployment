@@ -20,7 +20,7 @@ rm -rf $SPACK_HOME/spack $SPACK_HOME/spack-deployment $SPACK_HOME/licenses $HOME
 
 ########################## CLONE REPOSITORIES ############################
 cd $SPACK_HOME
-git clone https://github.com/pramodskumbhar/spack.git -b stable
+git clone https://github.com/pramodskumbhar/spack.git -b bbprh69
 git clone https://github.com/pramodskumbhar/spack-deployment.git
 
 unset MODULEPATH
