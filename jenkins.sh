@@ -53,6 +53,7 @@ packages_to_mirror=(
     'gcc@7.2.0'
     'llvm@4.0.1'
     'intel-parallel-studio@professional.2017.4+advisor+inspector+itac+vtune'
+    'intel-parallel-studio@professional.2016.3+advisor+inspector+itac+vtune'
 )
 
 for package in "${packages_to_mirror[@]}"
@@ -68,8 +69,8 @@ cp /gpfs/bbp.cscs.ch/scratch/gss/bgq/kumbhar-adm/compiler_downlaods/pgilinux-201
 
 ################################ SET COMPILERS CONFIG ################################
 mkdir -p  $SPACK_HOME/spack/etc/spack/defaults/linux/
-cp $SPACK_HOME/spack-deployment/step1.config.yaml $SPACK_HOME/spack/etc/spack/defaults/linux/config.yaml
-cp $SPACK_HOME/spack-deployment/step1.modules.yaml $SPACK_HOME/spack/etc/spack/defaults/linux/modules.yaml
+cp $SPACK_HOME/spack-deployment/step1/config.yaml $SPACK_HOME/spack/etc/spack/defaults/linux/config.yaml
+cp $SPACK_HOME/spack-deployment/step1/modules.yaml $SPACK_HOME/spack/etc/spack/defaults/linux/modules.yaml
 source $SPACK_HOME/spack/share/spack/setup-env.sh
 
 
@@ -87,6 +88,7 @@ spack uninstall -y intel-parallel-studio
 ################################ START COMPILERS INSTALLATION ################################
 compilers=(
     'intel-parallel-studio@professional.2017.4+advisor+inspector+itac+vtune'
+    'intel-parallel-studio@professional.2016.3+advisor+inspector+itac+vtune'
     'gcc@4.9.3'
     'gcc@5.3.0'
     'gcc@6.2.0'
