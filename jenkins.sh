@@ -50,3 +50,12 @@ cd spack-deployment
 ######################### REGISTER PACKAGES ##########################
 COMPILERS_INSTALL_PREFIX=$COMPILERS_HOME/install/`spack arch`/gcc-4.8.4
 ./register_packages.sh $COMPILERS_INSTALL_PREFIX
+
+set +e
+set +x
+
+spack config get config
+echo "SOFTWARES_HOME : $SOFTWARES_HOME"
+
+cp /gpfs/bbp.cscs.ch/home/kumbhar-adm/spack-deployment/install.sh .
+bash install.sh

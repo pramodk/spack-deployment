@@ -55,10 +55,6 @@ packages:
         paths:
             libmng@1.0.10: /usr
         version: [1.0.10]
-    libpciaccess:
-        paths:
-            libpciaccess@0.13.4: /usr
-        version: [0.13.4]
     libtool:
         paths:
             libtool@2.2.6: /usr
