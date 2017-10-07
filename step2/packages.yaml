@@ -67,8 +67,8 @@ packages:
         paths:
             libx11@1.6.4: /usr
         version: [1.6.4]
-    # lua is not complete installation
-    # as it lacks luarocks
+    # lua is not full complete installation
+    # as it lacks luarocks on the bbp node
     lua:
         paths:
             lua@5.1.4: /usr
@@ -81,10 +81,11 @@ packages:
         paths:
             ncurses@5.7.4: /usr
         version: [5.7.4]
-    openssl:
-        paths:
-            openssl@1.0: /usr
-        version: [1.0]
+    # see #5651 : better to update openssl
+    #openssl:
+    #    paths:
+    #        openssl@1.0: /usr
+    #    version: [1.0]
     pango:
         paths:
             pango@1.28.1: /usr
@@ -144,8 +145,11 @@ packages:
     intel-parallel-studio:
         paths:
             intel-parallel-studio@professional.2017.4%gcc@4.8.4: COMPILERS_INSTALL_PATH/intel-parallel-studio-professional.2017.4
-            intel-parallel-studio@professional.2016.3%gcc@4.8.4: COMPILERS_INSTALL_PATH/intel-parallel-studio-professional.2017.4
-        version: [professional.2017.4, professional.2016.3]
+        version: [professional.2017.4]
+    intel:
+        paths:
+            intel@17.0.4%gcc@4.8.4: COMPILERS_INSTALL_PATH/intel-parallel-studio-professional.2017.4
+        version: [17.0.4]
     pgi:
         paths:
             pgi@17.4%gcc@4.8.4: COMPILERS_INSTALL_PATH/pgi-17.4
