@@ -82,6 +82,7 @@ core_compiler='gcc@4.8.4'
 spack install $options $core_compiler %gcc@4
 spack compiler find `spack location --install-dir $core_compiler`
 
+spack uninstall -y intel-parallel-studio
 
 ################################ START COMPILERS INSTALLATION ################################
 compilers=(
