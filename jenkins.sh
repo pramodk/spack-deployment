@@ -107,8 +107,16 @@ spack module refresh --yes-to-all --delete-tree --module-type lmod --yes-to-all
 
 
 ####################### AVAILABLE PACKAGES & MODULES ################################
-module avail
 spack find
+module avail
+
+
+####################### PGI COMPILER CONFIGURATION ################################
+spack load pgi@17.4
+PGI_DIR=$(dirname $(which makelocalrc))
+GCC_DIR=`spack location --install-dir gcc@4.9.3`
+makelocalrc -x $PGI_DIR -gcc $GCC_DIR/bin/gcc -gpp $GCC_DIR/bin/g++ -g77 $GCC_DIR/bin/gfortran
+
 
 ################################ PERMISSIONS ################################
 chmod -R g-w  $WORKSPACE/*
