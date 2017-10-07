@@ -101,6 +101,7 @@ spack compiler find
 
 sed -i 's#.*fc: .*pgfortran#      fc: /usr/bin/gfortran#' $HOME/.spack/linux/compilers.yaml
 sed -i 's#.*f77: .*pgf77#      f77: /usr/bin/gfortran#' $HOME/.spack/linux/compilers.yaml
+sed -i 's#.*f77: .*pgfortran#      f77: /usr/bin/gfortran#' $HOME/.spack/linux/compilers.yaml
 sed  -i 's#.*f77: null#      f77: /usr/bin/gfortran#' $HOME/.spack/linux/compilers.yaml
 sed  -i 's#.*fc: null#      fc: /usr/bin/gfortran#' $HOME/.spack/linux/compilers.yaml
 
