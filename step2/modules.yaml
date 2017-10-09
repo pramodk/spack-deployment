@@ -24,13 +24,113 @@ modules:
   lmod:
     core_compilers:
       - 'gcc@4.8.4'
-    hash_length: 6
+    hierarchy:
+      - 'mpi'
+      - 'lapack'
+    hash_length: 0
     all:
+      suffixes:
+        '^cuda': gpu
+        '^python@3.5.2': python3
+        '^python@2': python2
+        '^openblas~openmp': blas
+        '^openblas+openmp': 'blas+thread'
+        '^intel-mkl~openmp': mkl
+        '^intel-mkl+openmp': 'mkl+thread'
       filter:
         environment_blacklist: ['CPATH', 'LIBRARY_PATH']
+    whitelist:
+      - mvapich2
+      - mpich
+      - intel-mpi
+      - openmpi
+      - ior
+      - darshan-runtime
+      - netlib-scalapack
+      - adios
+      - paraview
+      - petsc
+      - hdf5
+      - hpctoolkit
+      - scorep
+      - python
+      - py-numpy
+      - py-scipy
+      - py-theano
+      - caffe
+      - tau
+      - cudnn
+      - cuda
+      - py-ipython
+      - py-jupyter-notebook
+      - spark
+      - iozone
+      - qt
+      - zeromq
+      - intel-mkl
+      - 'openblas+openmp'
+      - gcc
+      - intel
+      - clang
+      - llvm
+      - pgi
+      - 'cmake%gcc@4.8.4'
+    blacklist:
+      - '%gcc'
+      - '%intel'
+      - '%clang'
+      - '%pgi'
+      - 'cmake'
   tcl:
     all:
       filter:
         environment_blacklist: ['CPATH', 'LIBRARY_PATH']
-    naming_scheme: '${PACKAGE}/${VERSION}-${COMPILERNAME}'
-    hash_length: 6
+      suffixes:
+        '^mpich': mpich
+        '^mvapich2': mvapich2
+        '^openmpi': openmpi
+        '^intel-mpi': intel-mpi
+        '^cuda': gpu
+        '^python@3.5.2': python3
+        '^python@2': python2
+        '^openblas~openmp': blas
+        '^openblas+openmp': 'blas+thread'
+        '^intel-mkl~openmp': mkl
+        '^intel-mkl+openmp': 'mkl+thread'
+    naming_scheme: '${PACKAGE}/${VERSION}-${COMPILERNAME}-${COMPILERVER}'
+    hash_length: 0
+    whitelist:
+      - mvapich2
+      - mpich
+      - intel-mpi
+      - openmpi
+      - ior
+      - darshan-runtime
+      - netlib-scalapack
+      - adios
+      - paraview
+      - petsc
+      - hdf5
+      - hpctoolkit
+      - scorep
+      - python
+      - py-numpy
+      - py-scipy
+      - py-theano
+      - caffe
+      - tau
+      - cudnn
+      - cuda
+      - py-ipython
+      - py-jupyter-notebook
+      - spark
+      - iozone
+      - qt
+      - zeromq
+      - 'cmake%gcc@4.8.4'
+    blacklist:
+      - '%gcc'
+      - '%intel'
+      - '%clang'
+      - '%pgi'
+      - 'cmake'
