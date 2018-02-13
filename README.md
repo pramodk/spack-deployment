@@ -8,6 +8,7 @@ other Jenkins job, we will set `$HOME` to the directory under jenkins workspace:
 
 ```
 export HOME=$WORKSPACE/DEPLOYMENT
+mkdir -p $HOME
 export SPACK_HOME=$WORKSPACE/DEPLOYMENT
 rm -rf $HOME/.spack
 ```
@@ -26,8 +27,8 @@ clone below repositories for Spack and Spack configurations:
 
 ```
 cd $SPACK_HOME
-git clone https://github.com/pramodskumbhar/spack.git -b bbprh69
-git clone https://github.com/pramodskumbhar/spack-deployment.git
+git clone https://github.com/pramodskumbhar/spack.git -b bbp5
+git clone https://github.com/pramodskumbhar/spack-deployment.git -b bbp5
 ```
 
 Add following to `.bashrc`
