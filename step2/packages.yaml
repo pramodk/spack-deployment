@@ -1,68 +1,60 @@
 packages:
     autoconf:
         paths:
-            autoconf@2.63: /usr
+            autoconf@2.69: /usr
         version: [2.63]
     automake:
         paths:
-            automake@1.11.1: /usr
-        version: [1.11.1]
+            automake@1.13.4: /usr
+        version: [1.13.4]
     bison:
         paths:
-            bison@2.4.1: /usr
-        version: [2.4.1]
+            bison@3.0.4: /usr
+        version: [3.0.4]
     cairo:
         paths:
-            cairo@1.8.8: /usr
-        version: [1.8.8]
+            cairo@1.8.10: /usr
+        version: [1.8.10]
     cmake:
         paths:
             cmake@2.8.12: /usr
         version: [2.8.12]
     curl:
         paths:
-            curl@7.19.7: /usr
-        version: [7.19.7]
-    environment-modules:
-        paths:
-            environment-modules@3.2.10: /usr
-        version: [3.2.10]
+            curl@7.29.0: /usr
+        version: [7.29.0]
     flex:
         paths:
-            flex@2.5.35: /usr
-        version: [2.5.35]
+            flex@2.5.37: /usr
+        version: [2.5.37]
     fontconfig:
         paths:
-            fontconfig@2.8.0: /usr
-        version: [2.8.0]
+            fontconfig@2.10.95: /usr
+        version: [2.10.95]
     glib:
         paths:
-            glib@1.2.10: /usr
-        version: [1.2.10]
+            glib@2.50.3: /usr
+        version: [2.50.3]
     hwloc:
         paths:
-            hwloc@1.5.3: /usr
-        version: [1.5.3]
+            hwloc@1.11.2: /usr
+        version: [1.11.2]
     libedit:
         paths:
-            libedit@2.11.4: /usr
-        version: [2.11.4]
+            libedit@3.0-12: /usr
+        version: [3.0-12]
     libjpeg:
         paths:
-            libjpeg@1.2.1: /usr
-        version: [1.2.1]
+            libjpeg@1.2.90: /usr
+        version: [1.2.90]
     libmng:
         paths:
             libmng@1.0.10: /usr
         version: [1.0.10]
     libtool:
         paths:
-            libtool@2.2.6: /usr
-        version: [2.2.6]
-    libx11:
-        paths:
-            libx11@1.6.4: /usr
-        version: [1.6.4]
+            libtool@2.4.2: /usr
+        version: [2.4.2]
     # lua is not full complete installation
     # as it lacks luarocks on the bbp node
     lua:
@@ -71,12 +63,12 @@ packages:
         version: [5.1.4]
     m4:
         paths:
-            m4@1.4.13: /usr
-        version: [1.4.13]
+            m4@1.4.16: /usr
+        version: [1.4.16]
     ncurses:
         paths:
-            ncurses@5.7.4: /usr
-        version: [5.7.4]
+            ncurses@5.9: /usr
+        version: [5.9]
     # see #5651 : better to update openssl
     #openssl:
     #    paths:
@@ -84,71 +76,71 @@ packages:
     #    version: [1.0]
     pango:
         paths:
-            pango@1.28.1: /usr
-        version: [1.28.1]
+            pango@1.40.4: /usr
+        version: [1.40.4]
     pcre:
         paths:
-            pcre@7.8.7: /usr
-        version: [7.8.7]
+            pcre@8.32: /usr
+        version: [8.32]
     perl:
         paths:
-            perl@5.10.1: /usr
-        version: [5.10.1]
+            perl@5.16.3: /usr
+        version: [5.16.3]
     pkg-config:
         paths:
-            pkg-config@0.23.9: /usr
-        version: [0.23.9]
+            pkg-config@0.27.1: /usr
+        version: [0.27.1]
     readline:
         paths:
-            readline@6.0.4: /usr
-        version: [6.0.4]
+            readline@6.2.10: /usr
+        version: [6.2.10]
     slurm:
         paths:
-            slurm@16.05: /usr
+            slurm@17.02: /usr
         buildable: False
-        version: [16.05]
+        version: [17.02]
     sqlite:
         paths:
-            sqlite@3.6.20: /usr
-        version: [3.6.20]
+            sqlite@3.7.17: /usr
+        version: [3.7.17]
     tar:
         paths:
-            tar@1.23: /usr
-        version: [1.23]
+            tar@1.26: /usr
+        version: [1.26]
     tcl:
         paths:
-            tcl@8.5.7: /usr
-        version: [8.5.7]
+            tcl@8.5.13: /usr
+        version: [8.5.13]
     tk:
         paths:
-            tk@8.5.7: /usr
-        version: [8.5.7]
+            tk@8.5.13: /usr
+        version: [8.5.13]
     xz:
         paths:
-            xz@4.9: /usr
-        version: [xz]
+            xz@5.2: /usr
+        version: [5.2]
     gcc:
         paths:
-            gcc@4.9.3%gcc@4.8.4: COMPILERS_INSTALL_PREFIX/gcc-4.9.3
-            gcc@5.3.0%gcc@4.8.4: COMPILERS_INSTALL_PREFIX/gcc-5.3.0
-            gcc@6.2.0%gcc@4.8.4: COMPILERS_INSTALL_PREFIX/gcc-6.2.0
-            gcc@7.2.0%gcc@4.8.4: COMPILERS_INSTALL_PREFIX/gcc-7.2.0
-        version: [4.9.3, 5.3.0, 6.2.0, 7.2.0]
+            gcc@4.9.3%gcc@4.8.5: COMPILERS_INSTALL_PREFIX/gcc-4.9.3
+            gcc@6.2.0%gcc@4.8.5: COMPILERS_INSTALL_PREFIX/gcc-6.2.0
+            gcc@7.2.0%gcc@4.8.5: COMPILERS_INSTALL_PREFIX/gcc-7.2.0
+        version: [4.9.3, 6.2.0, 7.2.0]
     llvm:
         paths:
-            llvm@4.0.1%gcc@4.8.4: COMPILERS_INSTALL_PREFIX/llvm-4.0.1
-        version: [4.0.1]
+            llvm@4.0.1%gcc@4.8.5: COMPILERS_INSTALL_PREFIX/llvm-4.0.1
+            llvm@5.0.1%gcc@4.8.5: COMPILERS_INSTALL_PREFIX/llvm-5.0.1
+        version: [4.0.1, 5.0.1]
     intel-parallel-studio:
         paths:
-            intel-parallel-studio@professional.2017.4%gcc@4.8.4: COMPILERS_INSTALL_PREFIX/intel-parallel-studio-professional.2017.4
-        version: [professional.2017.4]
+            intel-parallel-studio@professional.2018.1%gcc@4.8.5: COMPILERS_INSTALL_PREFIX/intel-parallel-studio-professional.2018.1
+        version: [professional.2018.1]
     intel:
         paths:
-            intel@17.0.4%gcc@4.8.4: COMPILERS_INSTALL_PREFIX/intel-parallel-studio-professional.2017.4
-        version: [17.0.4]
+            intel@18.0.1%gcc@4.8.5: COMPILERS_INSTALL_PREFIX/intel-parallel-studio-professional.2018.1
+        version: [18.0.1]
     pgi:
         paths:
-            pgi@17.4%gcc@4.8.4: COMPILERS_INSTALL_PREFIX/pgi-17.4
-        version: [17.4]
+            pgi@17.10%gcc@4.8.5: COMPILERS_INSTALL_PREFIX/pgi-17.10
+        version: [17.10]
     all:
         compiler: [gcc@4.9.3]

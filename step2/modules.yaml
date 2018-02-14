@@ -23,7 +23,7 @@ modules:
       - CMAKE_PREFIX_PATH
   lmod:
     core_compilers:
-      - 'gcc@4.8.4'
+      - 'gcc@4.8.5'
     hierarchy:
       - 'mpi'
       - 'lapack'
@@ -74,7 +74,7 @@ modules:
       - clang
       - llvm
       - pgi
-      - 'cmake%gcc@4.8.4'
+      - 'cmake%gcc@4.8.5'
     blacklist:
       - '%gcc'
       - '%intel'
@@ -127,7 +127,7 @@ modules:
       - iozone
       - qt
       - zeromq
-      - 'cmake%gcc@4.8.4'
+      - 'cmake%gcc@4.8.5'
     blacklist:
       - '%gcc'
       - '%intel'

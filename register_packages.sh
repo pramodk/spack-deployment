@@ -18,7 +18,6 @@ declare -a packages=(
     'cairo'
     'cmake'
     'curl'
-    'environment-modules'
     'flex'
     'fontconfig'
     'glib'
@@ -27,7 +26,6 @@ declare -a packages=(
     'libjpeg'
     'libmng'
     'libtool'
-    'libx11'
     'lua'
     'm4'
     'ncurses'
@@ -46,24 +44,25 @@ declare -a packages=(
 
 compilers=(
     'gcc@7.2.0'
-    'gcc@5.3.0'
+    'gcc@6.2.0'
     'gcc@4.9.3'
-    'gcc@4.8.4'
+    'gcc@4.8.5'
     'clang@4.0.1'
-    'intel@17.0.4'
-    'pgi@17.4'
+    'clang@5.0.1'
+    'intel@18.0.1'
+    'pgi@17.10'
 )
 
 
-cp step2/config.yaml $SPACK_HOME/spack/etc/spack/defaults/linux/
-cp step2/modules.yaml $SPACK_HOME/spack/etc/spack/defaults/linux/
-cp step2/packages.yaml $SPACK_HOME/spack/etc/spack/defaults/linux/
+cp step2/config.yaml $SPACK_HOME/etc/spack/defaults/linux/
+cp step2/modules.yaml $SPACK_HOME/etc/spack/defaults/linux/
+cp step2/packages.yaml $SPACK_HOME/etc/spack/defaults/linux/
 
 # for each compiler
 for compiler in "${compilers[@]}"
 do
-    cp step2/packages.yaml $SPACK_HOME/spack/etc/spack/defaults/linux/packages.yaml
-    sed -i "s/\[gcc@4.9.3]/\[$compiler]/g" $SPACK_HOME/spack/etc/spack/defaults/linux/packages.yaml
+    cp step2/packages.yaml $SPACK_HOME/etc/spack/defaults/linux/packages.yaml
+    sed -i "s/\[gcc@4.9.3]/\[$compiler]/g" $SPACK_HOME/etc/spack/defaults/linux/packages.yaml
 
     for package in "${packages[@]}"
     do
@@ -72,19 +71,20 @@ do
 done
 
 
-core_compiler='gcc@4.8.4'
+core_compiler='gcc@4.8.5'
 compilers=(
     'gcc@7.2.0'
-    'gcc@5.3.0'
+    'gcc@6.2.0'
     'gcc@4.9.3'
     'llvm@4.0.1'
-    'intel@17.0.4'
-    'pgi@17.4'
+    'llvm@5.0.1'
+    'pgi@17.10'
+    'intel@18.0.1'
 )
 
 
-cp step2/packages.yaml $SPACK_HOME/spack/etc/spack/defaults/linux/packages.yaml
-sed -i "s#COMPILERS_INSTALL_PREFIX#$compilers_install_prefix#g" $SPACK_HOME/spack/etc/spack/defaults/linux/packages.yaml
+cp step2/packages.yaml $SPACK_HOME/etc/spack/defaults/linux/packages.yaml
+sed -i "s#COMPILERS_INSTALL_PREFIX#$compilers_install_prefix#g" $SPACK_HOME/etc/spack/defaults/linux/packages.yaml
 
 for compiler in "${compilers[@]}"
 do

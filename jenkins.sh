@@ -49,13 +49,14 @@ spack compiler find
 cd $SPACK_DEPLOYMENT_HOME/repos/spack-deployment
 
 ######################### INSTALL COMPILERS ##########################
-./compilers.sh $SPACK_DEPLOYMENT_HOME $COMPILERS_HOME $SPACK_HOME
+#./compilers.sh $SPACK_DEPLOYMENT_HOME $COMPILERS_HOME $SPACK_HOME
 
-exit 0
 
 ######################### REGISTER PACKAGES ##########################
-COMPILERS_INSTALL_PREFIX=$COMPILERS_HOME/install/`spack arch`/gcc-4.8.4
+COMPILERS_INSTALL_PREFIX=$COMPILERS_HOME/install/`spack arch`/gcc-4.8.5
 ./register_packages.sh $COMPILERS_INSTALL_PREFIX
+
+exit 0
 
 set +e
 set +x
