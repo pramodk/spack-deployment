@@ -5,47 +5,53 @@ set -e
 
 
 ################################ SETUP BUILD ENVIRONMENT ################################
-export WORKSPACE=/gpfs/bbp.cscs.ch/scratch/gss/bgq/kumbhar-adm/JENKINS_DEPLOYMENT
-mkdir -p $WORKSPACE/SPACK_HOME
+export WORKSPACE=/gpfs/bbp.cscs.ch/home/kumbhar/
+export SPACK_DEPLOYMENT_HOME=$WORKSPACE/SOFTS_HOME
+mkdir -p $SPACK_DEPLOYMENT_HOME
 
 
 # spack stores cache and configs under $HOME. In order to avoid collision with
 # other user's build we change $HOME to directory under current workspace
-export HOME=$WORKSPACE/SPACK_HOME
-export SPACK_HOME=$WORKSPACE/SPACK_HOME
-export COMPILERS_HOME=$WORKSPACE/install/compilers
-export SOFTWARES_HOME=$WORKSPACE/install/softwares
+#export HOME=$SPACK_DEPLOYMENT_HOME
+export SPACK_HOME=$SPACK_DEPLOYMENT_HOME/repos/spack
+export COMPILERS_HOME=$SPACK_DEPLOYMENT_HOME/deployment/compilers
+export SOFTWARES_HOME=$SPACK_DEPLOYMENT_HOME/deployment/softwares
 
 
 ################################ CLEANUP ################################
-rm -rf $SPACK_HOME/spack $SPACK_HOME/spack-deployment $SPACK_HOME/licenses $HOME/.spack
+#rm -rf $SPACK_DEPLOYMENT_HOME/spack $SPACK_DEPLOYMENT_HOME/spack-deployment $SPACK_DEPLOYMENT_HOME/licenses $HOME/.spack
 
 
 ########################## CLONE REPOSITORIES ############################
-cd $SPACK_HOME
-git clone https://github.com/pramodskumbhar/spack.git -b bbprh69
-git clone https://github.com/pramodskumbhar/spack-deployment.git
+mkdir -p $SPACK_DEPLOYMENT_HOME/repos/
+cd $SPACK_DEPLOYMENT_HOME/repos/
+
+if false; then
+    git clone https://github.com/pramodskumbhar/spack.git -b bbp5
+    git clone https://github.com/pramodskumbhar/spack-deployment.git -b bbp5
+    git clone ssh://bbpcode.epfl.ch/user/kumbhar/spack-licenses licenses
+    ########################## ADD LICENSES ############################
+    cp -r licenses $SPACK_HOME/etc/spack/
+fi
 
 unset MODULEPATH
-export PATH=$SPACK_HOME/spack/bin:$PATH
-source $SPACK_HOME/spack/share/spack/setup-env.sh
+export PATH=$SPACK_HOME/bin:$PATH
+source $SPACK_HOME/share/spack/setup-env.sh
 
-
-########################## ADD LICENSES ############################
-git clone ssh://bbpcode.epfl.ch/user/kumbhar/spack-licenses licenses
-cp -r licenses $SPACK_HOME/spack/etc/spack/
-
+# remove previous cache
+#spack clean -a
 
 ######################### ARCH & DEFAULT COMPILERS ##########################
 spack arch
 spack compiler find
 
 
-cd spack-deployment
+cd $SPACK_DEPLOYMENT_HOME/repos/spack-deployment
 
 ######################### INSTALL COMPILERS ##########################
-./compilers.sh $SPACK_HOME $COMPILERS_HOME
+./compilers.sh $SPACK_DEPLOYMENT_HOME $COMPILERS_HOME $SPACK_HOME
 
+exit 0
 
 ######################### REGISTER PACKAGES ##########################
 COMPILERS_INSTALL_PREFIX=$COMPILERS_HOME/install/`spack arch`/gcc-4.8.4

@@ -1,10 +1,10 @@
 config:
   install_tree: $COMPILERS_HOME/install
-  source_cache: $COMPILERS_HOME/extra/cache
+  source_cache: $COMPILERS_HOME/.cache
   module_roots:
     tcl: $COMPILERS_HOME/modules/tcl
     lmod: $COMPILERS_HOME/modules/lmod
   build_stage:
     - $tempdir
-    - $COMPILERS_HOME/extra/stage
-  install_path_scheme: '${ARCHITECTURE}/${COMPILERNAME}-${COMPILERVER}/${PACKAGE}-${VERSION}'
+    - $COMPILERS_HOME/.stage
+  install_path_scheme: '${COMPILERNAME}-${COMPILERVER}/${PACKAGE}-${VERSION}'

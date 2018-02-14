@@ -1,10 +1,10 @@
 config:
   install_tree: $SOFTWARES_HOME/install
-  source_cache: $SOFTWARES_HOME/extra/cache
+  source_cache: $SOFTWARES_HOME/.cache
   module_roots:
     tcl: $SOFTWARES_HOME/modules/tcl
     lmod: $SOFTWARES_HOME/modules/lmod
   build_stage:
     - $tempdir
-    - $SOFTWARES_HOME/extra/stage
+    - $SOFTWARES_HOME/.stage
   install_path_scheme: '${ARCHITECTURE}/${COMPILERNAME}-${COMPILERVER}/${PACKAGE}-${VERSION}-${HASH:6}'

@@ -23,7 +23,7 @@ modules:
       - CMAKE_PREFIX_PATH
   lmod:
     core_compilers:
-      - 'gcc@4.8.4'
+      - 'gcc@4.8.5'
     hash_length: 0
     whitelist:
       - 'gcc'
