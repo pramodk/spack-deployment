@@ -54,9 +54,8 @@ cd $SPACK_DEPLOYMENT_HOME/repos/spack-deployment
 
 ######################### REGISTER PACKAGES ##########################
 COMPILERS_INSTALL_PREFIX=$COMPILERS_HOME/install/`spack arch`/gcc-4.8.5
-./register_packages.sh $COMPILERS_INSTALL_PREFIX
+#./register_packages.sh $COMPILERS_INSTALL_PREFIX
 
-exit 0
 
 set +e
 set +x
@@ -64,5 +63,5 @@ set +x
 spack config get config
 echo "SOFTWARES_HOME : $SOFTWARES_HOME"
 
-cp /gpfs/bbp.cscs.ch/scratch/gss/bgq/kumbhar-adm/install.sh .
+cp /gpfs/bbp.cscs.ch/tds/home/kumbhar/SOFTS_HOME/repos/spack-packagelist/install.sh .
 bash install.sh

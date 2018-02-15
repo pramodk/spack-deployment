@@ -74,6 +74,8 @@ modules:
       - clang
       - llvm
       - pgi
+      - imb
+      - osu-micro-benchmarks
       - 'cmake%gcc@4.8.5'
     blacklist:
       - '%gcc'
@@ -127,6 +129,8 @@ modules:
       - iozone
       - qt
       - zeromq
+      - imb
+      - osu-micro-benchmarks
       - 'cmake%gcc@4.8.5'
     blacklist:
       - '%gcc'
